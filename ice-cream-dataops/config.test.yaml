@@ -1,13 +1,13 @@
 environment:
-  name: <env>
-  project: <YOUR CDF PROJECT> # ex. cdf-bootcamp-01-test
-  type: <env> # prod, staging, dev, test, qa
+  name: test
+  project: cdf-bootcamp-47-test
+  type: test
   selected:
 
 variables:
   modules:
     bootcamp:
-      CDF_PROJECT: <YOUR CDF PROJECT> # ex. cdf-bootcamp-01-test
+      CDF_PROJECT: cdf-bootcamp-47-test
       IDP_CLIENT_ID: ${IDP_CLIENT_ID} # replaced by .env
       IDP_CLIENT_SECRET: ${IDP_CLIENT_SECRET} # replaced by .env
       IDP_TENANT_ID: ${IDP_TENANT_ID} # replaced by .env
@@ -17,10 +17,10 @@ variables:
 
       # Groups
       # OBJECT ID FOR test/prod Groups
-      data_developer_source_id: <OBJECT ID FOR TEST/PROD DATA DEVELOPER ENTRA GROUP> # ex. xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx
-      data_pipeline_oee_source_id: <OBJECT ID FOR TEST/PROD DATA PIPELINE OEE ENTRA GROUP> # ex. xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx
-      readwrite_source_id: <OBJECT ID FOR TEST/PROD ADMIN TK ENTRA GROUP>  # ex. xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx
-      icapi_extractors_source_id: <OBJECT ID FOR TEST/PROD ICAPI EXTRACTORS ENTRA GROUP> # ex. xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx
+      data_developer_source_id: 2128fbbe-2e93-4100-9ccf-891315a4e6b5
+      data_pipeline_oee_source_id: aec5e904-bae5-44c5-9084-982c8e1a0539
+      readwrite_source_id: 586e4b85-8e0f-4711-9db9-3261b08b6efc
+      icapi_extractors_source_id: 9f9cb9cd-e97f-408e-8f08-6c4e1bc0decb
 
       # Client Ids (App registrations or Service Principals)
       data_pipeline_oee_client_id: ${DATA_PIPELINE_OEE_CLIENT_ID} # replaced by .env
