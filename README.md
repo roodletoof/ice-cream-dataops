@@ -18,8 +18,7 @@ brew install python@3.11
 Or install it via pyenv as shown in the
 [tutorial](https://docs.cdf-bootcamp.cogniteapp.com/content/data_foundation/setup_the_cdf_toolkit/#install-cdf-toolkit).
 
-Create a virtual environment for python3.11, activate it and install the
-requirements.
+Create a virtual environment for python3.11, activate it and install the requirements.
 ```zsh
 python3.11 -m venv venv
 source venv/bin/activate
