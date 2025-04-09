@@ -6,6 +6,7 @@ destination:
     externalId: CogniteCore
     version: v1
     destinationType: CogniteTimeSeries
+  instanceSpace:
   type: instances
 ignoreNullFields: true
 isPublic: true
