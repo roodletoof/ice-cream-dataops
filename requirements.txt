@@ -12,6 +12,7 @@ mixpanel==4.10.1
 msal==1.32.0
 numpy==2.2.4
 oauthlib==3.2.2
+orjson==3.10.16
 packaging==24.2
 pandas==2.2.3
 prompt_toolkit==3.0.50

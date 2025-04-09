@@ -1,0 +1,85 @@
+- name: Frontfill every 10 minutes for the last hour of data (streamer)
+  functionExternalId: icapi_datapoints_extractor
+  cronExpression: "*/10 * * * *"
+  data:
+    hours: 1
+
+- name: Backfill Houston once a day for the last 5 days (gap filling)
+  functionExternalId: icapi_datapoints_extractor
+  cronExpression: "47 0 * * *"
+  data:
+    backfill: True
+    sites:
+      - Houston
+
+- name: Backfill Oslo once a day for the last 5 days (gap filling)
+  functionExternalId: icapi_datapoints_extractor
+  cronExpression: "47 0 * * *"
+  data:
+    backfill: True
+    sites:
+      - Oslo
+
+- name: Backfill Kaula_Lumpur once a day for the last 5 days (gap filling)
+  functionExternalId: icapi_datapoints_extractor
+  cronExpression: "47 0 * * *"
+  data:
+    backfill: True
+    sites:
+      - Kaula_Lumpur
+
+- name: Backfill Hannover once a day for the last 5 days (gap filling)
+  functionExternalId: icapi_datapoints_extractor
+  cronExpression: "47 0 * * *"
+  data:
+    backfill: True
+    sites:
+      - Hannover
+
+- name: Backfill Nuremberg once a day for the last 5 days (gap filling)
+  functionExternalId: icapi_datapoints_extractor
+  cronExpression: "47 0 * * *"
+  data:
+    backfill: True
+    sites:
+      - Nuremberg
+
+- name: Backfill Marseille once a day for the last 5 days (gap filling)
+  functionExternalId: icapi_datapoints_extractor
+  cronExpression: "47 0 * * *"
+  data:
+    backfill: True
+    sites:
+      - Marseille
+
+- name: Backfill Sao_Paulo once a day for the last 5 days (gap filling)
+  functionExternalId: icapi_datapoints_extractor
+  cronExpression: "47 0 * * *"
+  data:
+    backfill: True
+    sites:
+      - Sao_Paulo
+
+- name: Backfill Chicago once a day for the last 5 days (gap filling)
+  functionExternalId: icapi_datapoints_extractor
+  cronExpression: "47 0 * * *"
+  data:
+    backfill: True
+    sites:
+      - Chicago
+
+- name: Backfill Rotterdam once a day for the last 5 days (gap filling)
+  functionExternalId: icapi_datapoints_extractor
+  cronExpression: "47 0 * * *"
+  data:
+    backfill: True
+    sites:
+      - Rotterdam
+
+- name: Backfill London once a day for the last 5 days (gap filling)
+  functionExternalId: icapi_datapoints_extractor
+  cronExpression: "47 0 * * *"
+  data:
+    backfill: True
+    sites:
+      - London
