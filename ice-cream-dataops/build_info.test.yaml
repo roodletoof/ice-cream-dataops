@@ -2,10 +2,10 @@
 modules:
   version: 0.3.29
   modules:
-  - name: data_foundation
+  - name: oee
     location:
-      path: modules/bootcamp/data_foundation
-      hash: ab150268
+      path: modules/bootcamp/use_cases/oee
+      hash: 8f0e2c6c
     build_variables:
     - key: CDF_PROJECT
       value: cdf-bootcamp-47-test
@@ -79,20 +79,46 @@ modules:
       value: oee_ts_space
       is_selected: true
       location: modules/bootcamp
+    - key: uc_oee_ds_external_id
+      value: ds_uc_oee
+      is_selected: true
+      location: modules/bootcamp/use_cases/oee
     resources:
+      data_models:
+      - identifier:
+          space: oee_ts_space
+        source:
+          path: /Users/ivar.fatland/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/data_models/oee_timeseries.space.yaml
+          hash: 9d813842
+        kind: Space
       auth:
       - identifier:
-          name: gp_admin_read_write
+          name: data_pipeline_oee
         source:
-          path: /Users/ivar.fatland/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/data_foundation/auth/admin.readwrite.group.yaml
-          hash: 26085f31
+          path: /Users/ivar.fatland/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/auth/data_pipeline_oee.yaml
+          hash: 8af5f20c
         kind: Group
+      functions:
       - identifier:
-          name: data_developer
+          externalId: oee_timeseries
         source:
-          path: /Users/ivar.fatland/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/data_foundation/auth/data_developer.yaml
-          hash: 670814f1
-        kind: Group
+          path: /Users/ivar.fatland/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/functions/functions.Functions.yaml
+          hash: fb080fe3
+        kind: Function
+      - identifier:
+          functionExternalId: oee_timeseries
+          name: Run calculations every 5 minutes for last hour of data
+        source:
+          path: /Users/ivar.fatland/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/functions/schedules.Schedules.yaml
+          hash: aea6cc33
+        kind: Schedule
+      data_sets:
+      - identifier:
+          externalId: ds_uc_oee
+        source:
+          path: /Users/ivar.fatland/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/data_sets/data_sets.yaml
+          hash: e9c828c5
+        kind: DataSet
     warning_count: 0
     status: Success
     iteration: 1
@@ -383,10 +409,10 @@ modules:
     warning_count: 14
     status: Success
     iteration: 1
-  - name: oee
+  - name: data_foundation
     location:
-      path: modules/bootcamp/use_cases/oee
-      hash: a1b5b2f0
+      path: modules/bootcamp/data_foundation
+      hash: ab150268
     build_variables:
     - key: CDF_PROJECT
       value: cdf-bootcamp-47-test
@@ -460,33 +486,20 @@ modules:
       value: oee_ts_space
       is_selected: true
       location: modules/bootcamp
-    - key: uc_oee_ds_external_id
-      value: ds_uc_oee
-      is_selected: true
-      location: modules/bootcamp/use_cases/oee
     resources:
-      data_models:
-      - identifier:
-          space: oee_ts_space
-        source:
-          path: /Users/ivar.fatland/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/data_models/oee_timeseries.space.yaml
-          hash: 9d813842
-        kind: Space
       auth:
       - identifier:
-          name: data_pipeline_oee
+          name: gp_admin_read_write
         source:
-          path: /Users/ivar.fatland/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/auth/data_pipeline_oee.yaml
-          hash: 8af5f20c
+          path: /Users/ivar.fatland/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/data_foundation/auth/admin.readwrite.group.yaml
+          hash: 26085f31
         kind: Group
-      functions: []
-      data_sets:
       - identifier:
-          externalId: ds_uc_oee
+          name: data_developer
         source:
-          path: /Users/ivar.fatland/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/data_sets/data_sets.yaml
-          hash: e9c828c5
-        kind: DataSet
+          path: /Users/ivar.fatland/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/data_foundation/auth/data_developer.yaml
+          hash: 670814f1
+        kind: Group
     warning_count: 0
     status: Success
     iteration: 1
