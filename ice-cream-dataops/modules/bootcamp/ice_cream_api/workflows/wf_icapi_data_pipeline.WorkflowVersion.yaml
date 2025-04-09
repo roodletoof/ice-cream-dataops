@@ -1,4 +1,3 @@
-# TODO might be wrong
 workflowExternalId: wf_icapi_data_pipeline
 version: '1'
 workflowDefinition:
@@ -43,7 +42,6 @@ workflowDefinition:
     parameters:
       function:
         externalId: oee_timeseries
-        data: { hours: 1}
     retries: 3
     timeout: 3600
     onFailure: abortWorkflow
