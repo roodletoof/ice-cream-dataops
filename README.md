@@ -4,7 +4,8 @@ This is notes for myself for anything I did that goes outside the tutorial.
 # Pushing data to CDF
 Before running `cdf-tk deploy` I have to delete the cdf groups that have scoped
 permissions via the Admin tab in Cognite Fusion.
-This is due to some bug ¯\_(ツ)_/¯
+This is due to some rare bug in the toolkit according to the instructor.
+Update: I did not have to do this on the last two days for some reason.
 
 # Setup
 
